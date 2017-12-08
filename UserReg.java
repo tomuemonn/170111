@@ -15,15 +15,17 @@ public class UserReg extends JFrame{
 		JPanel pnl = new JPanel();
 
 		JTextField jtf = new JTextField("",20);
+
 		JPasswordField jpf = new JPasswordField("",4);
 
 		JLabel lbl = new JLabel("mail");
 		JLabel lbl1 = new JLabel("password");
 
-		pnl.add(lbl,BorderLayout.NORTH);
-		pnl.add(jtf,BorderLayout.NORTH);
-		pnl.add(lbl1,BorderLayout.NORTH);
-		pnl.add(jpf,BorderLayout.NORTH);
+		pnl.setLayout(new GridLayout(2,2));
+		pnl.add(lbl);
+		pnl.add(jtf);
+		pnl.add(lbl1);
+		pnl.add(jpf);
 
 		Container cp = getContentPane();
 		cp.add(pnl,BorderLayout.NORTH);
