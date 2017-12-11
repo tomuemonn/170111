@@ -16,7 +16,7 @@ public class UserReg extends JFrame{
 
 		JTextField jtf = new JTextField("",20);
 
-		JPasswordField jpf = new JPasswordField("",4);
+		JPasswordField jpf = new JPasswordField("",10);
 
 		JLabel lbl = new JLabel("mail");
 		JLabel lbl1 = new JLabel("password");
