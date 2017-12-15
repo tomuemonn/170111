@@ -4,7 +4,7 @@ import java.awt.event.*;
 
 public class HelloJRadioButton extends JFrame implements ActionListener{
 	private JLabel lbl;
-	private JRadioButton[] rbtn;
+	private JRadioButton rbtn[];
 	
 	public static void main(String[] args){
 		HelloJRadioButton hjrb = new HelloJRadioButton("RadioButton");
@@ -12,12 +12,13 @@ public class HelloJRadioButton extends JFrame implements ActionListener{
 	}
 	
 	public void actionPerformed(ActionEvent e){
+		String msg = "";
+		Boolean result[] = new Boolean[3];
 		for(int i = 0; i < 3; i++){
-			if(this.rbtn[i].isSelected()){
-				this.lbl.setText(this.rbtn[i].getText()+"が選択されています。");
-				i = 3;
-			}else{
-				this.lbl.setText("何も選択されていません。");
+			result[i] = this.rbtn[i].isSelected();
+			if(result[i]){
+				msg = this.rbtn[i].getText()+"が選択されています。";
+				this.lbl.setText(msg);
 			}
 		}
 	}
