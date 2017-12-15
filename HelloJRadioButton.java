@@ -4,7 +4,7 @@ import java.awt.event.*;
 
 public class HelloJRadioButton extends JFrame implements ActionListener{
 	private JLabel lbl;
-	private JCheckBox[] check;
+	private JRadioButton[] rbtn;
 	
 	public static void main(String[] args){
 		HelloJRadioButton hjrb = new HelloJRadioButton("RadioButton");
@@ -13,8 +13,8 @@ public class HelloJRadioButton extends JFrame implements ActionListener{
 	
 	public void actionPerformed(ActionEvent e){
 		for(int i = 0; i < 3; i++){
-			if(this.check[i].isSelected()){
-				this.lbl.setText(this.check[i].getText()+"が選択されています。");
+			if(this.rbtn[i].isSelected()){
+				this.lbl.setText(this.rbtn[i].getText()+"が選択されています。");
 				i = 3;
 			}else{
 				this.lbl.setText("何も選択されていません。");
@@ -29,14 +29,14 @@ public class HelloJRadioButton extends JFrame implements ActionListener{
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 
 		this.lbl = new JLabel("Hello");
-		this.check = new JCheckBox[3];
-		this.check[0] = new JCheckBox("Tank");
-		this.check[1] = new JCheckBox("Carry");
-		this.check[2] = new JCheckBox("Sup");
+		this.rbtn = new JRadioButton[3];
+		this.rbtn[0] = new JRadioButton("Tank");
+		this.rbtn[1] = new JRadioButton("Carry");
+		this.rbtn[2] = new JRadioButton("Sup");
 		ButtonGroup bg = new ButtonGroup();
-		bg.add(check[0]);
-		bg.add(check[1]);
-		bg.add(check[2]);
+		bg.add(rbtn[0]);
+		bg.add(rbtn[1]);
+		bg.add(rbtn[2]);
 
 		JPanel pnl1 = new JPanel();
 		pnl1.setLayout(new GridLayout(3,1));
@@ -46,9 +46,9 @@ public class HelloJRadioButton extends JFrame implements ActionListener{
 		JButton btn = new JButton("Ok!");
 		btn.addActionListener(this);	
 
-		pnl1.add(this.check[0]);
-		pnl1.add(this.check[1]);
-		pnl1.add(this.check[2]);
+		pnl1.add(this.rbtn[0]);
+		pnl1.add(this.rbtn[1]);
+		pnl1.add(this.rbtn[2]);
 		pnl2.add(lbl);
 		pnl3.add(btn);
 
