@@ -24,17 +24,17 @@ public class Fukushu extends JFrame implements ActionListener{
 
 		this.lbl = new JLabel("Hello");
 		this.check = new JCheckBox("test");
-		JPanel pnl = new JPanel();
 		JPanel pnl1 = new JPanel();
+		JPanel pnl2 = new JPanel();
 		JButton btn = new JButton("Click!");
 		btn.addActionListener(this);
 
-		pnl.add(check);
-		pnl.add(this.lbl);
-		pnl1.add(btn);
+		pnl1.add(check);
+		pnl1.add(this.lbl);
+		pnl2.add(btn);
 
 		Container cp = getContentPane();
-		cp.add(pnl,BorderLayout.NORTH);
-		cp.add(pnl1,BorderLayout.SOUTH);
+		cp.add(pnl1,BorderLayout.NORTH);
+		cp.add(pnl2,BorderLayout.SOUTH);
 	}
 }
