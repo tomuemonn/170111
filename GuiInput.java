@@ -101,7 +101,7 @@ public class GuiInput extends JFrame implements ActionListener{
 				y++;
 			}
 		}catch (Exception r) {
-			System.out.println("読み込み終了！");
+			System.out.println("保存終了！");
 		}
 		Boolean result[] = new Boolean[4];
 		for(int i = 0; i < 4; i++){

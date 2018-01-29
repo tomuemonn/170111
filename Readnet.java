@@ -11,23 +11,15 @@ public class Readnet{
 		try{
 			readsock = new Socket(args[0], Integer.parseInt(args[1]));
 			instr = readsock.getInputStream();	
+			while(cont){
+				int n = instr.read(buff);
+				System.out.write(buff, 0, n);
+				instr.close();
+			}
 		}catch(Exception e){
 			System.err.println("ネットワークエラーです。");
 			System.exit(1);
-		}
-		while(cont){
-			try {
-				int n = instr.read(buff);
-				System.out.write(buff, 0, n);
-			}catch(Exception e){
-				cont = false;
-			}
-		}
-		try{
-			instr.close();
-		}catch(Exception e){
-			System.err.println("ネットワークのエラーです。");
-			System.exit(1);
+			cont = false;
 		}
 	}
 }
